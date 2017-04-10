@@ -1,0 +1,5 @@
+D:\Nazar\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\Release\VentsMaterials - DLL.csprojResolveAssemblyReference.cache
+D:\Nazar\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Release\VentsMaterials.dll
+D:\Nazar\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Release\VentsMaterials.pdb
+D:\Nazar\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\Release\VentsMaterials.dll
+D:\Nazar\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\Release\VentsMaterials.pdb
