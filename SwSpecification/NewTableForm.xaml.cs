@@ -83,7 +83,7 @@ namespace SwSpecification
               }
             return listString;
         }
-        public event EventHandler ButtonClicked;
+        
         private void BtnSaveNewTable_Click(object sender, RoutedEventArgs e)
         {
             NewTable();

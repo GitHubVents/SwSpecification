@@ -24,3 +24,9 @@ D:\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\
 D:\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\Debug\VentsMaterials.dll
 D:\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\Debug\VentsMaterials.pdb
 D:\C#Projects2015\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.tlb
+C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\Debug\VentsMaterials - DLL.csprojResolveAssemblyReference.cache
+C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\Debug\VentsMaterials.dll
+C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\obj\Debug\VentsMaterials.pdb
+C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.dll
+C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.pdb
+C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.tlb

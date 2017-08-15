@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Vlad\SwSpecification\SwSpecification\obj\Debug\
+C:\Users\denis_orel\Source\Repos\SwSpecification\SwSpecification\obj\Debug\
 SwSpecification
 none
 false
@@ -12,8 +12,8 @@ DEBUG;TRACE
 
 9-1402529601
 
-361034538420
-301491475305
+352108241265
+30-1933015829
 DProp.xaml;EditProperty.xaml;MPropUC.xaml;MPropUCProfil.xaml;NewTableForm.xaml;NotificationOfChanges.xaml;RecordDimM\FrmRecordDimM.xaml;SProp.xaml;UcTableToDrwDoc.xaml;
 
 False

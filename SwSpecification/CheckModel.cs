@@ -5,11 +5,9 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
 using System.Windows;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
-using VentsMaterials;
 
 namespace SwSpecification
 {
@@ -50,7 +48,8 @@ namespace SwSpecification
 
                 //var stringSldasm = swModel.GetTitle().Replace(".SLDASM", "");
 
-                if (number != swModel.GetTitle() + "-" + configName)
+                //if (number != swModel.GetTitle() + "-" + configName)
+                if ((number != swModel.GetTitle().Replace(".SLDASM", "") + "-" + configName) || (number != swModel.GetTitle().Replace(".SLDPRT", "") + "-" + configName))
                 {
 
                     if (razdel == "Детали" | razdel == "Сборочные единицы")
@@ -70,15 +69,6 @@ namespace SwSpecification
                     }
 
                 }
-            }
-            else
-            {
-                //if (configName == "00")
-                //{
-                //    swModel.AddCustomInfo3(configName, "Обозначение", 30, "$PRP:\"SW-File Name\"");
-                //    swModel.CustomInfo2[configName, "Исполнение"] = "0";
-
-                //}
             }
         }
 
@@ -239,22 +229,22 @@ namespace SwSpecification
         {
             swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             // Document Templates - Folders
-            swApp.SetUserPreferenceStringValue((int) swUserPreferenceStringValue_e.swFileLocationsDocumentTemplates, @"\\" + "192.168.14.11" + @"\SolidWorks Admin\Templates\Шаблоны");
- 
+            swApp.SetUserPreferenceStringValue((int) swUserPreferenceStringValue_e.swFileLocationsDocumentTemplates, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Шаблоны");
+
             #region UserSettings
-                #region Default Templates
-                    //Parts
-                    swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplatePart, @"\\" + "192.168.14.11" + @"\SolidWorks Admin\Templates\Шаблоны\Деталь.prtdot");
-                    //Assemblies
-                    swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplateAssembly, @"\\" + "192.168.14.11" + @"\SolidWorks Admin\Templates\Шаблоны\Сборка.asmdot");
-                    //Drawings
-                    swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplateDrawing, @"\\" + "192.168.14.11" + @"\SolidWorks Admin\Templates\Шаблоны\Чертеж.drwdot");
-                    //Always use these default document templates
-                    swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swAlwaysUseDefaultTemplates, true);
-                #endregion
-                #region General
-                    //Show latest news feeds in task pane
-                    swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swShowNewsFeedsInTaskPane, false);
+            #region Default Templates
+            //Parts
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplatePart, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Шаблоны\Деталь.prtdot");
+            //Assemblies
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplateAssembly, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Шаблоны\Сборка.asmdot");
+            //Drawings
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplateDrawing, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Шаблоны\Чертеж.drwdot");
+            //Always use these default document templates
+            swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swAlwaysUseDefaultTemplates, true);
+            #endregion
+            #region General
+            //Show latest news feeds in task pane
+            swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swShowNewsFeedsInTaskPane, false);
             
                     //Help make SolidWorks products better by automatically sending your log files to DS SolidWorks Corporation
                     swApp.SetUserPreferenceIntegerValue((int) swUserPreferenceIntegerValue_e.swPerformanceFeedback,(int)swPerformanceFeedback_e.swPerformanceFeedback_No);
@@ -340,12 +330,12 @@ namespace SwSpecification
             
                     //Hole Wizard/Toolbox
                     //Hole Wizard and Toolbox folder
-                    //swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swHoleWizardToolBoxFolder, @"\\srvkb\SolidWorks Admin\SolidWorks Data 2013\");
+                    swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swHoleWizardToolBoxFolder, @"\\192.168.12.164\SolidWorks Data");
                     swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swUseFolderAsDefaultSearchLocation, false);
-                    //Document Properties
-                    swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swFileLocationsSheetFormat, @"\\" + "192.168.14.11" + @"\SolidWorks Admin\Templates\Основные надписи");
-                    swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swFileLocationsMaterialDatabases, @"\\" + "192.168.14.11" + @"\SolidWorks Admin\Templates\Основные надписи");
-                    swApp.SetUserPreferenceToggle((int) swUserPreferenceToggle_e.swExtRefNoPromptOrSave, true);
+            //Document Properties
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swFileLocationsSheetFormat, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Основные надписи");
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swFileLocationsMaterialDatabases, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Основные надписи");
+            swApp.SetUserPreferenceToggle((int) swUserPreferenceToggle_e.swExtRefNoPromptOrSave, true);
                     //swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swFullyConstrainedSketchMode, true);
                 #endregion
             #endregion

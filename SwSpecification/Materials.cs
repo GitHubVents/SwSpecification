@@ -382,7 +382,7 @@ namespace SwSpecification
                 {
                     var confname = row.Cells[1].Value.ToString();
 
-                    _checkModelClass.SplitConfigurations(confname);
+                    //_checkModelClass.SplitConfigurations(confname);
 
                     if (_checkModelClass.CheckSheetMetal())
                     {

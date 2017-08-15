@@ -4,7 +4,6 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Lifetime;
 using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
@@ -47,7 +46,7 @@ namespace VentsMaterials
             public string CoatingType  { get; set; }
             public string CoatingClass { get; set; }
         }
-        #region " СРАВНЕНИЯ ТОЛЩИНЫ ЛИСТОГО МЕТАЛЛА С SQL "
+        #region "СРАВНЕНИЯ ТОЛЩИНЫ ЛИСТОГО МЕТАЛЛА С SQL"
             public string ThicknessValout { get; set; }
             public string BendRadiusValout { get; set; }
             public string KFactorValout { get; set; }

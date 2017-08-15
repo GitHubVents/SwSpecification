@@ -207,6 +207,7 @@ namespace SwSpecification
             return true;
         }
         #endregion
+
         #region UI Methods
             public void AddCommandMgr()
             {
@@ -250,7 +251,7 @@ namespace SwSpecification
                     //cmdGroup.LargeMainIcon = iBmp.CreateFileFromResourceBitmap("SwSpecification.AddLogo.bmp", thisAssembly);
                     //cmdGroup.SmallMainIcon = iBmp.CreateFileFromResourceBitmap("SwSpecification.AddLogo.bmp", thisAssembly);
 
-                    GetCurrentVersion();
+                    //GetCurrentVersion();
 
                     SetSettings();
 
@@ -282,7 +283,7 @@ namespace SwSpecification
                     // Параметры...
                     //cmdGroup.AddCommandItem2("", 9, "", "Параметры", 3, "UsersSettings", "", mainItemID9, menuToolbarOption);
                     // Настройки подключения...
-                    //cmdGroup.AddCommandItem2("", 10, "", "Настройки подключения", 4, "LoadMyForm", "", mainItemID10, menuToolbarOption);
+                    cmdGroup.AddCommandItem2("", 10, "", "Настройки подключения", 4, "LoadMyForm", "", mainItemID10, menuToolbarOption);
                     // Справка
                     //cmdGroup.AddCommandItem2("", 11, "", "Справка", 5, "LoadHelp", "", mainItemID11, menuToolbarOption);
                     // О программе
@@ -332,6 +333,7 @@ namespace SwSpecification
                 return true;
             }
         #endregion
+
         #region UI Callbacks - Функции и процедуры
         #region " Set settings "
             public void SetSettings()
@@ -413,6 +415,7 @@ namespace SwSpecification
             {
             }
         #endregion
+
         #region " NotificationOfChanges "
         public void NotificationOfChanges()
         {
@@ -562,6 +565,7 @@ namespace SwSpecification
                 return functionReturnValue;
             }
         #endregion   
+
         #region " Проверка на открытую модель "
             //<~~~~~~ При открытом чертеже кнопка погашена
             public int LoadSwModelEnable()
@@ -596,12 +600,14 @@ namespace SwSpecification
             return functionReturnValue;
         }
         #endregion
+
         #region " ReNameConfiguration "
             public void ReNameConfiguration()
             {
                 CheckModelClass.ReNameConfiguration();
             }
         #endregion
+
         #region " ОТКРЫВАЕМ ТОЛЬКО СБОРОЧНЫЙ ЧЕРТЕЖ "
             public int LoadEnable()
         {
@@ -648,55 +654,7 @@ namespace SwSpecification
             }
         }
         #endregion
-        #region " ФОРМА НАСТРОЕК - SETTINGS "
-            public void LoadMyForm()
-        {
-            //Try
-            //If StgForm Is Nothing Then
-            _stgForm = new SettingForm();
-            //End If
-            _stgForm.ShowDialog();
-            //Catch
-            //StgForm = Nothing
-            //End Try
 
-            //<~~~~~~~~~~~~~~~~~~~~~ Сохраняем настройки
-
-            string kye = "ENTERPRISE /s \"srvprog:1641\\Yurchenko_new\" /c \"Constructor\"";
-            string logn = Properties.Settings.Default.LoginUser;
-            string pas = Properties.Settings.Default.PasswordUser;
-
-            ProcessStartInfo p = new ProcessStartInfo();
-
-            //Путь к программе 1С Предприятие
-            p.FileName = "C:\\Program Files (x86)\\1cv82\\8.2.18.61\\bin\\1cv8.exe";
-
-            // Use these arguments for the process
-            p.Arguments = kye + "/N\"" + logn + "\"" + "/P" + "\"" + pas + "\"";
-
-            _stgForm.Path1c.Text = p.FileName;
-            _stgForm.PathKey.Text = kye;
-
-            //If My.Settings.LoginUser = "*" Then
-            _stgForm.Login.Text = Properties.Settings.Default.LoginUser;
-            _stgForm.pass.Text = Properties.Settings.Default.PasswordUser;
-            _stgForm.Path1c.Text = Properties.Settings.Default.Path1c;
-            _stgForm.PathKey.Text = Properties.Settings.Default.Key1c;
-
-            //End If
-
-        }
-        #endregion
-        #region " USERS SETTINGS "
-            public void UsersSettings()
-        {
-            var formUsersSettings = new FrmUsersSettings();
-            formUsersSettings.ShowDialog();
-            formUsersSettings.ComboBoxIP.Text = Properties.Settings.Default.ComboBoxIP;
-            formUsersSettings.ChkStandard.Checked = Properties.Settings.Default.ChkStandard;
-            formUsersSettings.ChkIns.Checked = Properties.Settings.Default.ChkInsPrp;
-        }
-        #endregion
         #region " СОЗДАНИЕ СПЕЦИФИКАЦИИ "
         // Кнопка "Создать спецификацию"
         public void Load()
@@ -720,6 +678,7 @@ namespace SwSpecification
             }
         }
         #endregion
+
         #region " СОЗДАНИЕ ОТЧЕТА И ЗАПУСК 1С СО СБОРКИ"
             public void LoadAssembly()
             {
@@ -728,6 +687,7 @@ namespace SwSpecification
                 // NewDocform.ShowDialog()
             }
         #endregion
+
         #region " БАЗА МАТЕРИАЛОВ "
             public void LoadMaterials()
             {
@@ -765,6 +725,7 @@ namespace SwSpecification
                 return functionReturnValue;
             }
         #endregion
+
         #region " ОТКРЫВАЕМ СПРАВКУ "
             //TODO: SW-Complex help
             public void loadhelp()
@@ -775,6 +736,7 @@ namespace SwSpecification
                 //Process.Start(c);
             }
         #endregion
+
         #region " ABOUT SW-COMPLEX "
             public void AboutSwCom()
             {
@@ -782,6 +744,7 @@ namespace SwSpecification
                 frmAboutSw.ShowDialog();
             }
         #endregion
+
         #region " Properties Table "
             public void LoadTableMat()
         {
@@ -791,6 +754,7 @@ namespace SwSpecification
             
         }
         #endregion
+
         #region TT
             public void LoadTT()
             {
@@ -805,6 +769,7 @@ namespace SwSpecification
                 }
             }
         #endregion
+
         #region RecordDimM
             public void LoadRecordDimM()
             {
@@ -812,6 +777,7 @@ namespace SwSpecification
                 frmRecordDim.Show();
             }
         #endregion
+
         public int CheckDrawingDoc()
         {
             var functionReturnValue = 0;

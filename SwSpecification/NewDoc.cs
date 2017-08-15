@@ -193,19 +193,6 @@ namespace SwSpecification
                 }
             }
 
-            if (pbarform.ProgressBar1.Value == 95)
-            {
-                pbarform.Label2.Text = ("Запуск 1с...");
-                try
-                {
-                    Run1c();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Проблема с запуском 1с");
-                }
-            }
-
             if (pbarform.ProgressBar1.Value == pbarform.ProgressBar1.Maximum)
             {
                 pbarform.Close();
@@ -403,7 +390,7 @@ namespace SwSpecification
                 bGetVisible = false;
                 vConfigurations = swBomFeature.GetConfigurations(bGetVisible, vVisibility);
 
-                swTableAnnotation = swTableAnnotation;
+                //swTableAnnotation = swTableAnnotation;
 
                 ///////////////////////////////////////////////////////////////////
 
@@ -800,54 +787,6 @@ namespace SwSpecification
         }
         #endregion
 
-        #region " Запуск 1с "
-
-
-        public void Run1c()
-        {
-            try
-            {
-                SettingForm SettingConnect = new SettingForm();
-
-                string kye = Properties.Settings.Default.Key1c;
-                string logn = Properties.Settings.Default.LoginUser;
-                string pas = Properties.Settings.Default.PasswordUser;
-
-                ProcessStartInfo p = new ProcessStartInfo();
-
-                //Путь к программе 1С Предприятие
-                //p.FileName = "C:\Program Files (x86)\1cv82\common\1cestart.exe"
-                p.FileName = Properties.Settings.Default.Path1c;
-
-                // Use these arguments for the process
-                p.Arguments = kye + "/N\"" + logn + "\"" + "/P" + "\"" + pas + "\"";
-
-                ////////////
-                Process[] Proc = null;
-                string ModuleName = null;
-                string ProcName = null;
-                ModuleName = "1cv8.exe";
-                ProcName = System.IO.Path.GetFileNameWithoutExtension(ModuleName);
-                Proc = Process.GetProcessesByName(ProcName);
-                if (Proc.Length > 0)
-                {
-                    //Nothing
-                }
-                else
-                {
-                    //Start the process
-                    Process.Start(p);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw;
-            }
-    
-        }
-
-        #endregion
 
         #region ADD ALL CHECKBOX DATAGRIDVIEW HEADER
         private bool _IsSelectAllChecked;

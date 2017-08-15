@@ -188,6 +188,7 @@ namespace SWPlus
         #endregion
         #region " LoadComboBox "
         private readonly DataTableSql _dtSql = new DataTableSql();
+
         public void LoadComboBox()
         {
             try
@@ -2355,7 +2356,7 @@ namespace SWPlus
 
                         for (int i = 0; i < CboHatch.Items.Count; i++)
                         {
-                            if (CboHatch.Items[i] == strTemp)
+                            if (CboHatch.Items[i].ToString() == strTemp)
                             {
                                 m = 1;
                                 break;

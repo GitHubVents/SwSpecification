@@ -18,11 +18,6 @@ namespace SwSpecification
 
         private void Save_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.LoginUser = Login.Text;
-            Properties.Settings.Default.PasswordUser = pass.Text;
-            Properties.Settings.Default.Path1c = Path1c.Text;
-            Properties.Settings.Default.Key1c = PathKey.Text;
-            Properties.Settings.Default.Save();
             Close();
         }
 
@@ -33,7 +28,6 @@ namespace SwSpecification
             dialog.Title = "Select exe";
             if (DialogResult.OK == dialog.ShowDialog())
             {
-                Properties.Settings.Default.Path1c = dialog.FileName;
                 Path1c.Text = dialog.FileName;
             }
         }

@@ -8,7 +8,7 @@ namespace SwSpecification
     class ConnectSqlString
     {
 
-        public string Con = @"Data Source=" + Properties.Settings.Default.ComboBoxIP + @";Initial Catalog=SWPlusDB;Persist Security Info=True;User ID=sa;Password=PDMadmin;MultipleActiveResultSets=True;Pooling=True"; 
+        public string Con = @"Data Source=192.168.12.164" + @";Initial Catalog=SWPlusDB;Persist Security Info=True;User ID=AirVentsCAD;Password=1;MultipleActiveResultSets=True;Pooling=True"; 
 
     }
 }

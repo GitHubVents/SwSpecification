@@ -899,23 +899,21 @@ namespace SWPlus
                     {
                         if (prpTestVersion == 1)
                         {
-                            MessageBox.Show("Проверка версии форматкиVersion@" + strSheetFormatName);
                             //Проверка версии форматки
                             strTemp = "Version@" + strSheetFormatName;
                         
                             ok = swModel.Extension.SelectByID2(strTemp, "NOTE", 0, 0, 0, false, 0, null, 0);
-                            MessageBox.Show("Проверка версии ok " + ok);
-                            if (ok)
-                            {
-                                swNote = swSelMgr.GetSelectedObject2(1);
-                                strTemp = swNote.GetText();
+                                if (ok)
+                                    {
+                                        swNote = swSelMgr.GetSelectedObject2(1);
+                                        strTemp = swNote.GetText();
 
-                                if (Strings.Right(strTemp, 1) != "4")
-                                {
-                                    k1 = k1 + 1;
-                                    sSheetsNames1 = sSheetsNames1 + vSheetNames[i] + ", ";
-                                }
-                            }
+                                        if (Strings.Right(strTemp, 1) != "4")
+                                        {
+                                            k1 = k1 + 1;
+                                            sSheetsNames1 = sSheetsNames1 + vSheetNames[i] + ", ";
+                                        }
+                                    }
                         }
 
                         if (prpTestStandard == 1)
@@ -1139,14 +1137,13 @@ namespace SWPlus
 
                     strMsg = strMsg + Strings.Chr(10) + "Исправить?";
 
-                    MessageBoxResult result = MessageBox.Show(strMsg, "", MessageBoxButton.YesNo,
-                        MessageBoxImage.Question);
+                    MessageBoxResult result = MessageBox.Show(strMsg, "", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                     if (result == MessageBoxResult.Yes)
                     {
                         //MessageBox.Show("1");
                         swModExt = swModel.Extension;
-                        MessageBox.Show(Source8);
+                        //MessageBox.Show(Source8);
                         ok = swModExt.LoadDraftingStandard(Source8);
 
                         //if (MIni == 1)
@@ -1254,19 +1251,6 @@ namespace SWPlus
                                 swTextFormat = swAnn.GetTextFormat(0);
                                 swAnn.SetTextFormat(0, true, swTextFormat); // Выставляем по умолчанию
                             }
-
-
-
-                            //if ()
-                            //{
-                            //    if ()
-                            //    {
-                            //    }
-                            //}
-
-
-
-
                         }
                            swAnn = swAnn.GetNext3();
                      }
