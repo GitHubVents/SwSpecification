@@ -229,16 +229,16 @@ namespace SwSpecification
         {
             swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             // Document Templates - Folders
-            swApp.SetUserPreferenceStringValue((int) swUserPreferenceStringValue_e.swFileLocationsDocumentTemplates, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Шаблоны");
+            swApp.SetUserPreferenceStringValue((int) swUserPreferenceStringValue_e.swFileLocationsDocumentTemplates, @"\\" + "PDMSRV.vents.local" + @"\SolidWorks Admin\Templates\Шаблоны");
 
             #region UserSettings
             #region Default Templates
             //Parts
-            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplatePart, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Шаблоны\Деталь.prtdot");
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplatePart, @"\\" + "PDMSRV.vents.local" + @"\SolidWorks Admin\Templates\Шаблоны\Деталь.prtdot");
             //Assemblies
-            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplateAssembly, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Шаблоны\Сборка.asmdot");
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplateAssembly, @"\\" + "PDMSRV.vents.local" + @"\SolidWorks Admin\Templates\Шаблоны\Сборка.asmdot");
             //Drawings
-            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplateDrawing, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Шаблоны\Чертеж.drwdot");
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swDefaultTemplateDrawing, @"\\" + "PDMSRV.vents.local" + @"\SolidWorks Admin\Templates\Шаблоны\Чертеж.drwdot");
             //Always use these default document templates
             swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swAlwaysUseDefaultTemplates, true);
             #endregion
@@ -330,11 +330,11 @@ namespace SwSpecification
             
                     //Hole Wizard/Toolbox
                     //Hole Wizard and Toolbox folder
-                    swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swHoleWizardToolBoxFolder, @"\\192.168.12.164\SolidWorks Data");
+                    swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swHoleWizardToolBoxFolder, @"\\PDMSRV.vents.local\SolidWorks Data");
                     swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swUseFolderAsDefaultSearchLocation, false);
             //Document Properties
-            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swFileLocationsSheetFormat, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Основные надписи");
-            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swFileLocationsMaterialDatabases, @"\\" + "192.168.12.164" + @"\SolidWorks Admin\Templates\Основные надписи");
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swFileLocationsSheetFormat, @"\\" + "PDMSRV.vents.local" + @"\SolidWorks Admin\Templates\Основные надписи");
+            swApp.SetUserPreferenceStringValue((int)swUserPreferenceStringValue_e.swFileLocationsMaterialDatabases, @"\\" + "PDMSRV.vents.local" + @"\SolidWorks Admin\Templates\Основные надписи");
             swApp.SetUserPreferenceToggle((int) swUserPreferenceToggle_e.swExtRefNoPromptOrSave, true);
                     //swApp.SetUserPreferenceToggle((int)swUserPreferenceToggle_e.swFullyConstrainedSketchMode, true);
                 #endregion
@@ -344,7 +344,7 @@ namespace SwSpecification
         #region ReNameConfiguration
             public void ReNameConfiguration()
             {
-                swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+               swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
                 var swDoc = (ModelDoc2)swApp.ActiveDoc;
                 var configList = new List<string>();
                 foreach (var confaname in swDoc.GetConfigurationNames())

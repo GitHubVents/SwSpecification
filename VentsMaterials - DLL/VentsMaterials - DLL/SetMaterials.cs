@@ -29,7 +29,8 @@ namespace VentsMaterials
             // Here we add five DataRows.
             tablecoatin.Rows.Add("Шаргень", "WR");
             tablecoatin.Rows.Add("Глянец", "GL");
-  
+            tablecoatin.Rows.Add("E/P-PARLAK (Муар)", "E/P-PARLAK");
+
             return tablecoatin;
         }
         public List<string> CoatingListClass()

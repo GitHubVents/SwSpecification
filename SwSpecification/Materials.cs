@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using VentsMaterials;
-using System.Collections.Generic;
 
 namespace SwSpecification
 {
@@ -16,6 +15,8 @@ namespace SwSpecification
         public Materials()
         {
             InitializeComponent();
+            _swapp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
+            ToSQL.Conn = _con.Con;
         }
 
         #region VARIABLES
@@ -32,7 +33,6 @@ namespace SwSpecification
         {
             try
             {
-                ToSQL.Conn = _con.Con;
                 //PictureBox2.ImageLocation = @"D:\Program Files\SolidWorks 2013\SolidWorks\data\graphics\Images\preview\light grey low gloss plastic.jpg";
 
                 ButtonOK.Enabled = false;
@@ -66,7 +66,6 @@ namespace SwSpecification
         {
             try
             {
-                _swapp = (SldWorks) Marshal.GetActiveObject("SldWorks.Application");
                 _swmodel = (ModelDoc2) _swapp.ActiveDoc;
                 DataGridConfig.Rows.Clear();
 
@@ -82,12 +81,6 @@ namespace SwSpecification
                             (int) swMessageBoxIcon_e.swMbInformation, (int) swMessageBoxBtn_e.swMbOk);
                         configuration.Name = "00";
                     }
-                }
-
-                var confarray2 = _matDll.GetConfigurationNames();
-
-                foreach (var confname in confarray2)
-                {
                     int n;
                     if (int.TryParse(confname, out n))
                     {
@@ -364,7 +357,7 @@ namespace SwSpecification
         {
             try
             {
-                ToSQL.Conn = _con.Con;
+                //ToSQL.Conn = _con.Con;
 
                 if (MatTree.SelectedNode == null)
                 {

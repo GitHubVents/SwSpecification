@@ -22,6 +22,7 @@ namespace SWPlus
         public MProp()
         {
             InitializeComponent();
+            swApp = (SldWorks)Marshal.GetActiveObject("SldWorks.Application");
             Test();
         }
         #region " VARIABLES "
@@ -870,21 +871,37 @@ namespace SWPlus
                 }
                 else // Открытая модель
                 {
-                    vConfNameArr = swModel.GetConfigurationNames();
+                    //vConfNameArr = swModel.GetConfigurationNames();
 
-                    foreach (var confname in vConfNameArr)
+                    //foreach (var confname in vConfNameArr)
+                    //{
+                    //    if (confname == "По умолчанию")
+                    //    {
+                    //        var configuration = (IConfiguration) swModel.GetConfigurationByName("По умолчанию");
+                    //        swApp.SendMsgToUser2("Конфигурация \"По умолчанию\" будет переименована на \"00\"", (int)swMessageBoxIcon_e.swMbStop, (int)swMessageBoxBtn_e.swMbOk);
+                    //        //MessageBox.Show("Конфигурация \"По умолчанию\" будет переименована на \"00\"");
+                    //        configuration.Name = "00";
+
+                    //    }
+                    //    CheckModelClass.SplitConfigurations(confname);
+                    //}
+
+
+                    var confList = matDll.GetConfigurationNames();
+                    foreach (string confname in confList)
                     {
                         if (confname == "По умолчанию")
                         {
-                            var configuration = (IConfiguration) swModel.GetConfigurationByName("По умолчанию");
-                            MessageBox.Show("Конфигурация \"По умолчанию\" будет переименована на \"00\"");
+                            var configuration = (IConfiguration)swModel.GetConfigurationByName("По умолчанию");
+                            swApp.SendMsgToUser2("Конфигурация \"По умолчанию\" будет переименована на \"00\"", (int)swMessageBoxIcon_e.swMbStop, (int)swMessageBoxBtn_e.swMbOk);
                             configuration.Name = "00";
                         }
+                        CheckModelClass.SplitConfigurations(confname);
                     }
 
                     // Add ConfigName
-                    AddCustomProperty(vConfNameArr);
-                    ChkSplitConfiguration();
+                    //AddCustomProperty(vConfNameArr);
+                    //ChkSplitConfiguration();
 
                     if (MStart == 0) // Исходная загрузка
                     {
@@ -896,8 +913,8 @@ namespace SWPlus
                         swModel.ForceRebuild3(true);
                     }
                 }
-                var con = new ConnectSqlString();
-                ToSQL.Conn = con.Con;
+                //var con = new ConnectSqlString();
+                //ToSQL.Conn = con.Con;
 
                 strTemp = "0";
                 MIni1 = strTemp == "1" ? 1 : 0;
@@ -1950,7 +1967,7 @@ namespace SWPlus
         #region " Проверка "
         public void Test()
         {
-            swApp = (SldWorks) Marshal.GetActiveObject("SldWorks.Application");
+            
             swModel = swApp.ActiveDoc;
 
             mRun = 0;
@@ -1959,14 +1976,16 @@ namespace SWPlus
             // Проверка открытого документа
             if (swModel == null)
             {
-                MessageBox.Show("Откройте модель, сборку или чертеж!");
+                swApp.SendMsgToUser2("Откройте модель, сборку или чертеж!", (int)swMessageBoxIcon_e.swMbStop, (int)swMessageBoxBtn_e.swMbOk);
+                //MessageBox.Show("Откройте модель, сборку или чертеж!");
                 Close();
                 return;
             }
 
             if (string.IsNullOrEmpty(swModel.GetPathName()))
             {
-                MessageBox.Show("Сохраните файл!");
+                //MessageBox.Show("Сохраните файл!");
+                swApp.SendMsgToUser2("Сохраните файл!", (int)swMessageBoxIcon_e.swMbStop, (int)swMessageBoxBtn_e.swMbOk);
                 Close();
                 return;
             }
@@ -2009,13 +2028,15 @@ namespace SWPlus
                     {
                         swView = swDraw.GetFirstView();
                         swView = swView.GetNextView();
-                        MessageBox.Show("Не удалось определить вид из свойств листа. Ипользуется первый вид.");
+                        //MessageBox.Show("Не удалось определить вид из свойств листа. Ипользуется первый вид.");
+                        swApp.SendMsgToUser2("Не удалось определить вид из свойств листа. Ипользуется первый вид.", (int)swMessageBoxIcon_e.swMbStop, (int)swMessageBoxBtn_e.swMbOk);
                     }
                 }
 
                 if (swView == null)
                 {
-                    MessageBox.Show("Отсутсвует модель!");
+                    swApp.SendMsgToUser2("Отсутсвует модель!", (int)swMessageBoxIcon_e.swMbStop, (int)swMessageBoxBtn_e.swMbOk);
+                    //MessageBox.Show("Отсутсвует модель!");
                     // Возвращение активного листа
                     swDraw.ActivateSheet(strActiveSheetName);
                     Close();
@@ -2024,7 +2045,8 @@ namespace SWPlus
 
                 if (swView.ReferencedDocument == null)
                 {
-                    MessageBox.Show("Отсутсвует модель!");
+                    swApp.SendMsgToUser2("Отсутсвует модель!", (int)swMessageBoxIcon_e.swMbStop, (int)swMessageBoxBtn_e.swMbOk);
+                    // MessageBox.Show("Отсутсвует модель!");
                     // Возвращение активного листа
                     swDraw.ActivateSheet(strActiveSheetName);
                     Close();

@@ -302,9 +302,7 @@
     <EmbeddedResource Include="AddLogo.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MProp\" />
     <Folder Include="Resources\" />
-    <Folder Include="SProp\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="DProp.xaml">
