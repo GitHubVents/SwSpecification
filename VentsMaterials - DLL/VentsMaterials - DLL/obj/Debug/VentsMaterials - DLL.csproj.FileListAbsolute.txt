@@ -30,3 +30,9 @@ C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMater
 C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.dll
 C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.pdb
 C:\Users\denis_orel\Source\Repos\SwSpecification\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.tlb
+D:\Visual Studio Projects\To_REMAKE\NewSW\VentsMaterials - DLL\VentsMaterials - DLL\obj\Debug\VentsMaterials - DLL.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\To_REMAKE\NewSW\VentsMaterials - DLL\VentsMaterials - DLL\obj\Debug\VentsMaterials.dll
+D:\Visual Studio Projects\To_REMAKE\NewSW\VentsMaterials - DLL\VentsMaterials - DLL\obj\Debug\VentsMaterials.pdb
+D:\Visual Studio Projects\To_REMAKE\NewSW\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.dll
+D:\Visual Studio Projects\To_REMAKE\NewSW\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.pdb
+D:\Visual Studio Projects\To_REMAKE\NewSW\VentsMaterials - DLL\VentsMaterials - DLL\bin\Debug\VentsMaterials.tlb

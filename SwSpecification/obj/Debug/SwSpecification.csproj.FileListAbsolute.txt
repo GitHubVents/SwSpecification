@@ -230,3 +230,46 @@ C:\Users\denis_orel\Source\Repos\SwSpecification\SwSpecification\obj\Debug\SwSpe
 C:\Users\denis_orel\Source\Repos\SwSpecification\SwSpecification\obj\Debug\SwSpecification.dll
 C:\Users\denis_orel\Source\Repos\SwSpecification\SwSpecification\obj\Debug\SwSpecification.pdb
 C:\Users\denis_orel\Source\Repos\SwSpecification\SwSpecification\bin\Debug\SwSpecification.tlb
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\SwSpecification.dll.config
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\SwSpecification.dll
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\SwSpecification.pdb
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\SwSpecification.tlb
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\solidworkstools.dll
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\VentsMaterials.dll
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\WPFToolkit.dll
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\VentsMaterials.pdb
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.csprojResolveAssemblyReference.cache
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\DProp.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\EditProperty.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MPropUC.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MPropUCProfil.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\NewTableForm.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\NotificationOfChanges.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SProp.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\UcTableToDrwDoc.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\DProp.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\EditProperty.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MPropUC.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MPropUCProfil.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\NewTableForm.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\NotificationOfChanges.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\RecordDimM\FrmRecordDimM.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SProp.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\UcTableToDrwDoc.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification_MarkupCompile.cache
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification_MarkupCompile.lref
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\RecordDimM\FrmRecordDimM.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.g.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.AboutSWComplex.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.addincheckbox.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.FrmUsersSettings.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.Materials.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.NewDoc.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.PBar.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.Properties.Resources.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.SettingForm.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.TT.FrmTT.resources
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.csproj.GenerateResource.Cache
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.dll
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.pdb

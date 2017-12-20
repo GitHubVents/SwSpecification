@@ -6,11 +6,13 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using SwSpecification;
 using Microsoft.VisualBasic;
-using SolidWorks.Interop.sldworks;
-using SolidWorks.Interop.swconst;
 using SwSpecification.DataTableClass;
 using VentsMaterials;
 using System.IO;
+using SolidWorks.Interop.sldworks;
+using SolidWorks.Interop.swconst;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SWPlus
 {
@@ -164,8 +166,15 @@ namespace SWPlus
         private int longwarnings;
 
         public string MaterialTxt;
-
         private MPropUcProfil _profilForm;
+        
+
+
+        ///////////////////////////////////////////////////////////////////////////////////
+        string sScale;
+        string sTotalSize;
+        string sSheets;
+
 
         public string strActiveSheetName { get; set; } // Имя листа, который был активен при открытии чертежа
 
@@ -1306,7 +1315,7 @@ namespace SWPlus
                     {
                         CboConfig.IsEnabled = true;
                         CboConfig.Items.Clear();
-
+                        
                         vConfNameArr2 = swModel.GetConfigurationNames(); // Имена всех конфигураций для загрузки CboConfig
 
                         foreach (var confname in vConfNameArr2)
@@ -1324,6 +1333,11 @@ namespace SWPlus
                                                     " \"необходимо переименовать в числовое значение!");
                                     return;
                                 }
+                            }
+                            else
+                            {
+                                swModel.AddCustomInfo2("PDMFlag", 30, "2");
+                                swModel.CustomInfo2["", "PDMFlag"] = "2";
                             }
                         }
 
@@ -2688,13 +2702,8 @@ namespace SWPlus
                     swModel.SummaryInfo[0] = strDescription;
                 }
 
-                ok = swModel.AddCustomInfo2("Наименование", 30, "");
-
                 swModel.AddCustomInfo2("Наименование", 30, "");
                 swModel.CustomInfo2["", "Наименование"] = strDescription;
-
-                swModel.AddCustomInfo2("Description", 30, strDescription);
-                swModel.CustomInfo2["", "Description"] = strDescription;
 
                 swModel.AddCustomInfo2("DescriptionEng", 30, TxtEngDescription.Text);
                 swModel.CustomInfo2["", "DescriptionEng"] = TxtEngDescription.Text;
@@ -3315,11 +3324,11 @@ namespace SWPlus
                 }
 
                 // Запись свойств в чертеж
-                //MDrw = 1;
+                // MDrw = 1;
                 if (MDrw == 1)
                 {
                     swModel = (ModelDoc2) swDraw;
-
+                    
                     if (strDescription == "")
                     {
                         swModel.SummaryInfo[0] = "";
@@ -3338,6 +3347,21 @@ namespace SWPlus
 
                     swModel.AddCustomInfo2("Number", 30, sNumber);
                     swModel.CustomInfo2["", "Number"] = sNumber;
+                        
+
+                    /////////////////////////////////////////////////////
+                    sTotalSize = "$PRP:" + Strings.Chr(34) + "SW-Template Size" + Strings.Chr(34);
+                    sScale = "$PRP:" + Strings.Chr(34) + "SW-Sheet Scale" + Strings.Chr(34);
+                    sSheets = "$PRP:" + Strings.Chr(34) + "SW-Total Sheets" + Strings.Chr(34);
+
+                    swModel.AddCustomInfo3("", "Формат шаблона", 30, sTotalSize);
+                    swModel.CustomInfo2["", "SW-Template Size"] = sTotalSize;
+                    
+                    swModel.AddCustomInfo2("Масштаб", 30, sScale);
+                    swModel.CustomInfo2["", "Scale"] = sScale;
+
+                    swModel.AddCustomInfo2("Листов", 30, sSheets);
+                    swModel.CustomInfo2["", "Total Sheets"] = sSheets;
 
                     swModel.ForceRebuild3(false);
                 }
@@ -3353,6 +3377,7 @@ namespace SWPlus
                 MessageBox.Show(ex.Message);
             }
         }
+       
         //private void DeleteAllProperties_Click(object sender, RoutedEventArgs e) // Удаление всех свойств из файла
         //{
         //    try
