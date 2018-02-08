@@ -461,7 +461,7 @@ namespace SwSpecification
         #region " MProp "
             public void LoadMProp()
             {
-                var mPropForm = new MProp();
+                var mPropForm = new MainWindow();
                 mPropForm.ShowDialog();
             }
             public int LoadMPropEnable()

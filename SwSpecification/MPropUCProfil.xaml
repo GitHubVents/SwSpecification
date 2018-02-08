@@ -16,10 +16,6 @@
             <RowDefinition Height="47*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.Column="1" >
-            <ComboBox Name="CboLang" Margin="5,5,12,5" SelectionChanged="CboLang_SelectionChanged" />
-        </StackPanel>
-
         <StackPanel Grid.Row="1" Grid.Column="0">
             <Label Content="Разраб." HorizontalAlignment="Left"/>
             <Label Content="Пров." HorizontalAlignment="Left"/>

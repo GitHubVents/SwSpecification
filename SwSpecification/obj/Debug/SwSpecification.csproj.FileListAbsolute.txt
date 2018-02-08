@@ -242,7 +242,6 @@ D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\bin\Debug\VentsMateria
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.csprojResolveAssemblyReference.cache
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\DProp.baml
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\EditProperty.baml
-D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MPropUC.baml
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MPropUCProfil.baml
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\NewTableForm.baml
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\NotificationOfChanges.baml
@@ -250,7 +249,6 @@ D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SProp.baml
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\UcTableToDrwDoc.baml
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\DProp.g.cs
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\EditProperty.g.cs
-D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MPropUC.g.cs
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MPropUCProfil.g.cs
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\NewTableForm.g.cs
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\NotificationOfChanges.g.cs
@@ -273,3 +271,7 @@ D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecificat
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.csproj.GenerateResource.Cache
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.dll
 D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\SwSpecification.pdb
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MProp\MainWindow.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MProp\FixAllConfig.g.cs
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MProp\MainWindow.baml
+D:\Visual Studio Projects\To_REMAKE\NewSW\SwSpecification\obj\Debug\MProp\FixAllConfig.baml

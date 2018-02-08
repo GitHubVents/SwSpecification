@@ -78,7 +78,6 @@ namespace SWPlus
         private int m1; // Метка
         private int MIni1;
         private int MIni2;
-        private string MIni3;
         private int MIni4;
         private int MIni5;
         private int MIni6;
@@ -101,7 +100,7 @@ namespace SWPlus
         private double vv; // Объем
         private double dv; // Плотность
         private double mvTemp;
-
+                                
         private Single singlTemp;
 
         private string sNumberReal; // Имя файла через свойство SW
@@ -157,9 +156,6 @@ namespace SWPlus
         private string[] vCustInfoNameArr; // Массив свойств файла
         private string[] sFormatArray; // Массив значений форматов из чертежа
 
-        private int[] NumChildren; // Массив для количества извлеченных конфигураций
-        private int[] NumLevel; // Массив для количества уровней вложенности конфигураций
-
         private long longTemp;
         private long lRetval;
         private int longstatus;
@@ -175,7 +171,7 @@ namespace SWPlus
         string sTotalSize;
         string sSheets;
 
-
+            
         public string strActiveSheetName { get; set; } // Имя листа, который был активен при открытии чертежа
 
         #endregion
@@ -949,12 +945,13 @@ namespace SWPlus
 
                 //TxtAssem2.Text = "";
 
+
+
                 Source4 = swModel.GetPathName();
 
                 // Обозначение
                 // Получение имени модели для Обозначения
                 sNumberTitle = swModel.GetTitle();
-
                 // Проверка на наличие расширения в имени файла
                 if (sNumberTitle.Length > 7)
                 {
@@ -969,59 +966,70 @@ namespace SWPlus
                 // Проверяем наличие ручного ввода Обозначения
                 m = 0; // Метка заданного Наименования (=1)
 
+
+                //if (ChkManual.IsChecked)
+                //{
+                //    Properties.Name = TextBox.Text;
+                //}
+                //else
+                //{
+                //    Properties.Name = "$PRP:\"SW-File Name\"";
+                //}
+                
+
                 strTemp = "$PRP:" + Strings.Chr(34) + "SW-File Name" + Strings.Chr(34);
 
-                if (prpFileName == 0) // Разделитель не используется
-                {
-                    if (swModel.CustomInfo["Обозначение"] == strTemp | swModel.CustomInfo["Обозначение"] == "")
-                    {
-                        ChkManual.IsChecked = false;
-                        TxtNumber.Text = sNumberTitle;
-                    }
-                    else
-                    {
-                        ChkManual.IsChecked = true;
-                        TxtNumber.Text = swModel.CustomInfo["Обозначение"];
-                    }
-                }
-                else // Разделитель используем
-                {
-                    varTemp = Strings.InStr(sNumberTitle, prpNameSep);
+                //if (prpFileName == 0) // Разделитель не используется
+                //{
+                //    if (swModel.CustomInfo["Обозначение"] == strTemp | swModel.CustomInfo["Обозначение"] == "")
+                //    {
+                //        ChkManual.IsChecked = false;
+                //        TxtNumber.Text = sNumberTitle;
+                //    }
+                //    else
+                //    {
+                //        ChkManual.IsChecked = true;
+                //        TxtNumber.Text = swModel.CustomInfo["Обозначение"];
+                //    }
+                //}
+                //else // Разделитель используем
+                //{
+                //    varTemp = Strings.InStr(sNumberTitle, prpNameSep);
 
-                    if (varTemp > 0) // Разделитель найден
-                    {
-                        strTemp1 = swModel.CustomInfo["Обозначение"] + prpNameSep + swModel.CustomInfo["Наименование"];
+                //    if (varTemp > 0) // Разделитель найден
+                //    {
+                //        strTemp1 = swModel.CustomInfo["Обозначение"] + prpNameSep + swModel.CustomInfo["Наименование"];
 
-                        if (sNumberTitle == strTemp1 | swModel.CustomInfo["Обозначение"] == "" |
-                            swModel.CustomInfo["Обозначение"] == strTemp)
-                        {
-                            ChkManual.IsChecked = false;
-                            TxtNumber.Text = Strings.Left(sNumberTitle, varTemp);
+                //        if (sNumberTitle == strTemp1 | swModel.CustomInfo["Обозначение"] == "" |
+                //            swModel.CustomInfo["Обозначение"] == strTemp)
+                //        {
+                //            ChkManual.IsChecked = false;
+                //            TxtNumber.Text = Strings.Left(sNumberTitle, varTemp);
 
-                            DescriptionTxtBox.Text = Strings.Right(sNumberTitle,
-                                Strings.Len(sNumberTitle) - varTemp - Strings.Len(prpNameSep) + 1);
-                            m = 1;
-                        }
-                        else
-                        {
-                            ChkManual.IsChecked = true;
-                            TxtNumber.Text = swModel.CustomInfo["Обозначение"];
-                        }
-                    }
-                    else // Нет разделителя
-                    {
-                        if (swModel.CustomInfo["Обозначение"] == strTemp | swModel.CustomInfo["Обозначение"] == "")
-                        {
-                            ChkManual.IsChecked = false;
-                            TxtNumber.Text = sNumberTitle;
-                        }
-                        else
-                        {
-                            ChkManual.IsChecked = true;
-                            TxtNumber.Text = swModel.CustomInfo["Обозначение"];
-                        }
-                    }
-                }
+                //            DescriptionTxtBox.Text = Strings.Right(sNumberTitle,
+                //                Strings.Len(sNumberTitle) - varTemp - Strings.Len(prpNameSep) + 1);
+                //            m = 1;
+                //        }
+                //        else
+                //        {
+                //            ChkManual.IsChecked = true;
+                //            TxtNumber.Text = swModel.CustomInfo["Обозначение"];
+                //        }
+                //    }
+                //    else // Нет разделителя
+                //    {
+                //        if (swModel.CustomInfo["Обозначение"] == strTemp | swModel.CustomInfo["Обозначение"] == "")
+                //        {
+                //            ChkManual.IsChecked = false;
+                //            TxtNumber.Text = sNumberTitle;
+                //        }
+                //        else
+                //        {
+                //            ChkManual.IsChecked = true;
+                //            TxtNumber.Text = swModel.CustomInfo["Обозначение"];
+                //        }
+                //    }
+                //}
 
                 var b = default(RoutedEventArgs);
                 ChkManual_Click(true, b);
@@ -1053,9 +1061,6 @@ namespace SWPlus
                                 : "";
                         }
                     }
-
-                    //TODO: DescriptionEng Наименование_ФБ strTemp
-                    strTempEng = swModel.CustomInfo2["", "DescriptionEng"];
 
                     TxtEngDescription.Text = strTempEng;
 
@@ -1254,7 +1259,7 @@ namespace SWPlus
                 MAssem = 0; // Метка флажка Сборка: 0 - можно менять флажок; 1 - нельзя менять флажок
 
                 MChkBlank = 1; // Метка флажка "Заготовка": 0 - можно менять флажок; 1 - нельзя менять флажок 
-
+                
                 // Проверка свойства Заготовка
                 strTemp = swModel.CustomInfo2[sConfigName, "Заготовка"];
                 if (strTemp != "")
@@ -1268,6 +1273,7 @@ namespace SWPlus
 
                 MChkBlank = 0;
                 ChkBlank_Click(true, e);
+
 
                 // Проверка свойства Сборка2_ФБ
                 strTemp = swModel.CustomInfo2[sConfigName, "Сборка2_ФБ"];
@@ -1688,7 +1694,7 @@ namespace SWPlus
                     formatmatarray[6] = "БЧ";
                     formatmatarray[7] = "*)";
                     formatmatarray[8] = "-";
-
+                    
                     CboBlankFormat.ItemsSource = formatmatarray;
 
                     #region Заполнение списка масс
@@ -1712,18 +1718,16 @@ namespace SWPlus
                     {
                         mv = vMassProp[5];
                         vv = vMassProp[3];
-
+                        
                         MMass = 1; // Метка флашка задать "Задать единицы и точность": 0 - можно менять флажок; 1 - нльзя менять флажок
+
                         if (swModel.CustomInfo2[sConfigName, "Единицы"] == "0" ||
                             swModel.CustomInfo2[sConfigName, "Единицы"] == "False") // Пользовательские настройки массы
                         {
-                            swModel.SetUserPreferenceIntegerValue((int) swUserPreferenceIntegerValue_e.swUnitSystem,
-                                (int) swUnitSystem_e.swUnitSystem_Custom);
+                            swModel.SetUserPreferenceIntegerValue((int) swUserPreferenceIntegerValue_e.swUnitSystem, (int) swUnitSystem_e.swUnitSystem_Custom);
                             ChkDefMass.IsChecked = true;
-                            longTemp =
-                                swModel.GetUserPreferenceIntegerValue(
-                                    (int) swUserPreferenceIntegerValue_e.swUnitsMassPropMass);
-
+                            longTemp = swModel.GetUserPreferenceIntegerValue((int) swUserPreferenceIntegerValue_e.swUnitsMassPropMass);
+                            
                             switch (longTemp)
                             {
                                 case (int) swUnitsMassPropMass_e.swUnitsMassPropMass_Milligrams:
@@ -1740,9 +1744,7 @@ namespace SWPlus
                                     break;
                             }
 
-                            longTemp =
-                                swModel.GetUserPreferenceIntegerValue(
-                                    (int) swUserPreferenceIntegerValue_e.swUnitsMassPropDecimalPlaces);
+                            longTemp = swModel.GetUserPreferenceIntegerValue((int) swUserPreferenceIntegerValue_e.swUnitsMassPropDecimalPlaces);
                             CboTol.SelectedIndex = Convert.ToInt32(longTemp);
                         }
                         else if (swModel.CustomInfo2[sConfigName, "Единицы"] == "-1" ||
@@ -1910,7 +1912,7 @@ namespace SWPlus
                     mvTemp = mvTemp*1000;
 
                     var myRoundString = MyRound(mvTemp, 1);
-                    ;
+                    
 
                     TxtMass.Text = myRoundString.ToString();
                     LblMass.Content = "г";
@@ -2705,8 +2707,6 @@ namespace SWPlus
                 swModel.AddCustomInfo2("Наименование", 30, "");
                 swModel.CustomInfo2["", "Наименование"] = strDescription;
 
-                swModel.AddCustomInfo2("DescriptionEng", 30, TxtEngDescription.Text);
-                swModel.CustomInfo2["", "DescriptionEng"] = TxtEngDescription.Text;
 
                 if (prpFontSize == 1) // Проверка количества строк
                 {

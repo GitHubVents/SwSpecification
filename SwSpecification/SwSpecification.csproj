@@ -168,6 +168,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CheckModel.cs" />
+    <Compile Include="MPropUCProfil.xaml.cs">
+      <DependentUpon>MPropUCProfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MProp\PropertiesEditing.cs" />
     <Compile Include="ClassPropertySldWorks.cs" />
     <Compile Include="ConnectSqlString.cs" />
     <Compile Include="DataTableClass\DataTableSQL.cs" />
@@ -183,17 +187,12 @@
     <Compile Include="FrmUsersSettings.Designer.cs">
       <DependentUpon>FrmUsersSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="MProp\MainWindow.xaml.cs" />
     <Compile Include="Materials.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Materials.Designer.cs">
       <DependentUpon>Materials.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MPropUC.xaml.cs">
-      <DependentUpon>MPropUC.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MPropUCProfil.xaml.cs">
-      <DependentUpon>MPropUCProfil.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewDoc.cs">
       <SubType>Form</SubType>
@@ -223,6 +222,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="MProp\Propertiy.cs" />
     <Compile Include="RecordDimM\ClassRecordDimM.cs" />
     <Compile Include="RecordDimM\FrmRecordDimM.xaml.cs">
       <DependentUpon>FrmRecordDimM.xaml</DependentUpon>
@@ -248,6 +248,8 @@
     <Compile Include="UcTableToDrwDoc.xaml.cs">
       <DependentUpon>UcTableToDrwDoc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MProp\FixAllConfig.xaml.cs" />
+    <Compile Include="MProp\WorkWithCommonConfFixer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -313,7 +315,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MPropUC.xaml">
+    <Page Include="MProp\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -340,6 +342,10 @@
     <Page Include="UcTableToDrwDoc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MProp\FixAllConfig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
